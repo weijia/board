@@ -1,4 +1,10 @@
 Board::Application.routes.draw do
+  resources :comments
+
+  resources :tickets
+
+  resources :projects
+
   authenticated :user do
     root :to => 'home#index'
   end

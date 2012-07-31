@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @ticket.title
+%p
+  %b Description:
+  = @ticket.description
+%p
+  %b Content:
+  = @ticket.content
+%p
+  %b Creator:
+  = @ticket.creator_id
+%p
+  %b Owner:
+  = @ticket.owner_id
+%p
+  %b Project:
+  = @ticket.project_id
+
+= link_to 'Edit', edit_ticket_path(@ticket)
+\|
+= link_to 'Back', tickets_path
