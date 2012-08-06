@@ -1,23 +1,26 @@
-%h1 Listing projects
+.row-fluid
+  .span12
+    .well
+      .navbar.navbar-heading
+        .navbar-inner
+          .container{:style => "width: auto;"}
+            %a.brand{:href => "#"} projects
+      %table.table.table-bordered.table-striped.small-font
+        %tr
+          %th Title
+          %th Description
+          %th Owner
+          %th
 
-%table
-  %tr
-    %th Title
-    %th Description
-    %th Owner
-    %th
-    %th
-    %th
+        - @projects.each do |project|
+          %tr
+            %td= project.title
+            %td= project.description
+            %td= project.owner.email
+            %td
+              = link_to 'Show', project
+              = link_to 'Edit', edit_project_path(project)
+              = link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete
+      %br
 
-  - @projects.each do |project|
-    %tr
-      %td= project.title
-      %td= project.description
-      %td= project.owner_id
-      %td= link_to 'Show', project
-      %td= link_to 'Edit', edit_project_path(project)
-      %td= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete
-
-%br
-
-= link_to 'New Project', new_project_path
+      = link_to 'New Project', new_project_path

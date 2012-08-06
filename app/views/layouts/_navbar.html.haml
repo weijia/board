@@ -1,0 +1,26 @@
+.blue.navbar.navbar-static.nomargin
+  .navbar-inner
+    .container{:style => "width: auto;"}
+      %a.brand{:href => "index.html"} System
+      %ul.nav.pull-right
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            %i.icon-xlarge.icon-user
+            %b.caret
+          %ul.dropdown-menu.dropdown-user-account
+            %li.account-img-container
+              %img.thumb.account-img{:src => "/images/100/07.png"}/
+            %li.account-info
+              %h3 Geunevere Calista
+              %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              %p
+                %a{:href => "#"} Edit
+                |
+                %a{:href => "#"} Privacy Settings
+            %li.account-footer
+              .row-fluid
+                .span8
+                  %a.btn.btn-primary.btn-small{:href => "#"} Change avatar
+                  %a.btn.btn-primary.btn-small{:href => "#"} View profile
+                .span4.align-right
+                  %a.btn.btn-danger.btn-small{:href => "/users/sign_out","data-method" => "delete"} Logout

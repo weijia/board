@@ -1,29 +1,34 @@
-%h1 Listing tickets
+.row-fluid
+  .span12
+    .well
+      .navbar.navbar-heading
+        .navbar-inner
+          .container{:style => "width: auto;"}
+            %a.brand{:href => "#"}  tickets
+      %table.table.table-bordered.table-striped.small-font
+        %tr
+          %th Title
+          %th Description
+          %th Content
+          %th Creator
+          %th Owner
+          %th Project
+          %th
+          %th
+          %th
 
-%table
-  %tr
-    %th Title
-    %th Description
-    %th Content
-    %th Creator
-    %th Owner
-    %th Project
-    %th
-    %th
-    %th
+        - @tickets.each do |ticket|
+          %tr
+            %td= ticket.title
+            %td= ticket.description
+            %td= ticket.content
+            %td= ticket.creator_id
+            %td= ticket.owner_id
+            %td= ticket.project_id
+            %td= link_to 'Show', ticket
+            %td= link_to 'Edit', edit_ticket_path(ticket)
+            %td= link_to 'Destroy', ticket, :confirm => 'Are you sure?', :method => :delete
 
-  - @tickets.each do |ticket|
-    %tr
-      %td= ticket.title
-      %td= ticket.description
-      %td= ticket.content
-      %td= ticket.creator_id
-      %td= ticket.owner_id
-      %td= ticket.project_id
-      %td= link_to 'Show', ticket
-      %td= link_to 'Edit', edit_ticket_path(ticket)
-      %td= link_to 'Destroy', ticket, :confirm => 'Are you sure?', :method => :delete
+      %br
 
-%br
-
-= link_to 'New Ticket', new_ticket_path
+      = link_to 'New Ticket', new_ticket_path

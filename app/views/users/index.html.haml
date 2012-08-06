@@ -1,6 +1,19 @@
-%h2 Users
-- @users.each do |user|
-  %br/
-  #{link_to user.email, user} signed up #{user.created_at.to_date}
-  #{link_to 'delete'} 
-= will_paginate
+.row-fluid
+  .span12
+    .well
+      .navbar.navbar-heading
+        .navbar-inner
+          .container{:style => "width: auto;"}
+            %a.brand{:href => "#"} User
+      %table.table.table-bordered.table-striped.small-font
+        %thead
+          %tr
+            %th Last Name
+            %th CreateDate
+            %th 
+        - @users.each do |user|
+          %tr
+            %td= user.email
+            %td= user.created_at
+            %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete
+      = will_paginate
