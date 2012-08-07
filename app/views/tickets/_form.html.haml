@@ -2,12 +2,12 @@
   = f.error_notification
 
   .form-inputs
+    = f.select :project_id , current_user.projects.collect {|p| [ p.title, p.id ] }
     = f.input :title
     = f.input :description
     = f.input :content
-    = f.input :creator_id
-    = f.input :owner_id
-    = f.input :project_id
+    = f.hidden_field :creator_id, :value => current_user.id
+    = f.hidden_field :owner_id, :value => current_user.id
 
   .form-actions
     = f.button :submit

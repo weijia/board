@@ -6,6 +6,8 @@
           .container
             %a{:href => "index.html",:class => 'brand'} 我的项目
       %p
+        - @projects.each do |project|
+          %a{:href => "/projects/#{project.id}"} #{project.title}
   .span6
     .well
       .navbar.navbar-heading
@@ -13,21 +15,5 @@
           .container
             %a{:href => "index.html",:class => 'brand'} 我的任务
       %p
-        TODO
-.row-fluid
-  .span6
-    .well
-      .navbar.navbar-heading
-        .navbar-inner
-          .container
-            %a{:href => "index.html",:class => 'brand'} Home
-      %p
-        TODO
-  .span6
-    .well
-      .navbar.navbar-heading
-        .navbar-inner
-          .container
-            %a{:href => "index.html",:class => 'brand'} Home
-      %p
-        TODO
+        - @tickets.each do |ticket|
+          %a{:href => "/tickets/#{ticket.id}"} #{ticket.title}

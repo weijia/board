@@ -1,5 +1,12 @@
 .row-fluid
   .span12
+    %a.btn.btn-large.btn-warning{:href => "#{new_project_path}"}
+      %span
+        %i.icon-large.icon-list-alt
+          Add Project
+%br
+.row-fluid
+  .span12
     .well
       .navbar.navbar-heading
         .navbar-inner
@@ -23,4 +30,3 @@
               = link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete
       %br
 
-      = link_to 'New Project', new_project_path
